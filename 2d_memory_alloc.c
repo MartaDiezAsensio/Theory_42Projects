@@ -100,3 +100,6 @@ int main()
 	}
 	free(arr);
 }
+
+/*Sde note: malloc allocates memory from the heap and not
+from the stack.*/
