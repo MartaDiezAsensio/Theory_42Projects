@@ -1,0 +1,16 @@
+
+As we can read in the Born2BeRoot subject:
+	- Setting up Rocky is quite complex.  Therefore, you don’t have to
+	set up KDump.  However, SELinux must be running at startup and its
+	configuration has to be adapted for the project’s needs. AppArmor
+	for Debian must be running at startup too.
+
+As we are going to start setting up Debian
+What is AppArmor?
+
+	AppArmor is a Mandatory Access Control Framework. When ennabled,
+	AppArmo confines programs according to a set of rules that specify
+	what files a given program can access. This proactive approach helps
+	protect the system against known and unknown vulnerabilities. 
+
+	In summary, is a Linux Application Security System.
