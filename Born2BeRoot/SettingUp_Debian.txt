@@ -66,14 +66,37 @@ SELinux vs AppArmor
 
 APT vs Aptitude
 
-	APT stands for Advances Package Tool
-
+	APT (Advanced Package Tool) and Aptitude are both package management tools used in 
+	Debian-based Linux distributions. While they serve similar purposes, there are some 
+	differences between the two:
+		1. Interface: APT is command-line tool, Aptitude has also a graphical interface. 
+		2. Dependency Resolution: Aptitude is considered to have more advanced dependenciies
+		handling capabilities. 
+		3. Package Management Operations
+		4. Search Functionality
+		5. Package Recommendations and Suggestions
+		6. Additional features
+	In summary, APT is a command-line package management tool focused on simplicity and efficiency. 
+	Aptitude, while also a command-line tool, provides a more interactive and user-friendly 
+	interface with advanced dependency handling capabilities. Both tools have their strengths 
+	and can be used for managing packages on Debian-based systems.
 
 
 Password Policy
 
-Sudo
+	Debian, being a popular Linux distribution, allows system administrators to customize the 
+	password policy according to their specific requirements. By default, Debian uses the 
+	pam_unix module, which provides password authentication and enforces certain password policies.
+	Here are some aspects of the password policy typically found in Debian:
+		1. Password Length
+		2. Complexity
+		3. Password Expiration
+		4. Password History
+		5. Account Lockout
+		6. Password Strength Assestment
 
+
+Sudo
 
 SSH 
 
