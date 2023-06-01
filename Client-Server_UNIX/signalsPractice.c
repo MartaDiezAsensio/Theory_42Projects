@@ -6,7 +6,7 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 17:35:16 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/06/01 18:55:30 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/06/01 23:34:30 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ After a delay, it uses the kill() function to send the SIGUSR1 signal to itself.
 The signal handler is defined to hande the SIGUSR1 signal and prints the message. 
 */
 
-int	sigempysetpractice()
+void	sigempysetpractice()
 {
 	sigset_t	signal_set;
 
@@ -103,7 +103,6 @@ void	ft_sigaction()
 	if (sigaction(SIGINT, &sa, NULL) == -1)
 	{
 		perror("sigaction");
-		return (-1);
 	}
 
 	//main program logic
@@ -111,7 +110,7 @@ void	ft_sigaction()
 
 int	main()
 {
-	int n = signals1();
+	ft_sigaction();
 	return 0;
 }
 

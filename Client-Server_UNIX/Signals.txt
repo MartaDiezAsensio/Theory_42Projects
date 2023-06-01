@@ -124,4 +124,50 @@ FUNCTIONS NEEDED IN MINITALK
 
 
 
+	Struct sigaction
+
+	sigaction is the improved version of signal() systtem call. 
+
+	The struct sigacttion is used to define the behaviour of a signal in C.
+	It contains several members that allow you to specify the action to be taken when a signal occurs,
+	control signal masking and configure additional signal hadling attributes. 
+
+		Struct	sigaction
+		{
+			void		(*sa_handler)(int);
+			void		(*sa_sigaction)(int, siginfo_t *, void *);
+			sigset_t	sa_mask;
+			int			sa_flags;
+			void		(*sa_restorer)(void);
+		}
+
+	There are various methods to send signals programmatically or via the command line. Here are a few examples:
+		- Sending signals programmatically
+			- Using the kill() function: you can use the kill() funtion to send a specific signal to a process 
+			identified by it's PID. 
+				int kill(pid_t pid, int sig);
+			ex. Kill(1234, SIGTEERM).
+
+			- Using the raise() function: thiis function allows a process to send a signal to itself.
+				int raise(int sig);
+			For instance to send a SIIGUSR1 signal to the current process.
+		
+		- Sending signals from the command line
+			- Using kill command following the syntax: kill -SIGNUM PID for example (kill -TERM 1234) This sends a
+			SIGTERM signal to the process with pid 1234. 
+
+	THeses are some of thte SIGNALS:
+
+		SIGHUP	- Hangup
+		SIGINT	- Interrupt
+		SIGQUIT	- Quit
+		SIGILL	- Illegal instruction
+		SIGTRAP	- Trace/breakpoint trap
+		SIGABRT	- Aborted
+		SIGIOT	- IOT trap (abort)
+		SIGBUS	- Bus error
+
+
+
+
 	PROCESSES vs THREADS
