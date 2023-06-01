@@ -60,14 +60,68 @@ managing program execution flow in reesponse to external events.
 FUNCTIONS NEEDED IN MINITALK
 
 	- signal()
-		- SIGUSR1
-		- SIGUSR2
+		- SIGUSR1 and SIGUSR2
+			- These signals are not assigned any specifc meaning by the operating system.
+			Instead, they are proided as a general purpose signals that can be used by user
+			applications to eestablish their own signaling mechanism or to communicate specific
+			events between processes. 
+
+			the primary purpose of SIGUSR1 and SIGUSR2 signals is to allow applications or
+			processes to define their own custom behaviours upon receiving these signals. applications
+			can register signal handlers forSIGUSR1 and 2 to perform certain actions or initiate
+			specific processes when these signals are received.
+
+			In summary, SIGUSR1 and SIGUSR2 are user-defined signals that can be used by applications 
+			to implement custom signaling mechanisms or communicate specific events between processes. 
+			Their behavior and handling are determined by the application itself.
+
 	- sigemptyset()
+		- This function is used to initialize a signa set to an empty set. A data signal set is a data 
+		structure that represents a collection of signals. 
+			int	sigemptyset(sigset_t *set);
+		The set parameter is  a pointer to the signal set that we want to initialize. 
+		* See typical usein examples. 
+
 	- sigaddset()
+		- int	sigaddset(sigset_t *set, int signal_number);
+
 	- sigaction()
+		- The sigaction() function is used to examineor modify the acion taken by a process upon 
+		receiving a specific signal. It allows you to set up signal handling behaviour, such as defining
+		a signal handler function, specifying signal flags, and accessing the previous signal disposition.
+			int	sigaction(int signal_number, const struct sigaction *act, struct sigaction *oldact);
+		Parameter description:
+			- signal_number: Signal number of the signal you want to modify/examine.
+			- act: A pointer to a struct sigaction object that specifies the new signal action. 
+			This includes the signal hadler function, sgnal flags, and other attributes.
+			- oldact: A pointer to a struct sigaction object that will receive the previous signal action.
+			*See struct sigaction in examples.  
+
 	- kill()
+		- This system call allows a process to send a signal to another process or group
+		of processes. it provides a mechanism for interpocesses communication and process management.
+			int	kill(pid_t pid, int signal),
+		The PID argument specifies the process ID off the target process or process group and the 'signal' 
+		argument specifies the signal to be sent.
+
+		These are some important points to understand about kil()
+			1. Sending Signals: if pid > 0 sends signal to the process with specified PID.
+			if pid == 0 sends signal to all processes in the current process group.
+			if pid == -1 sends signal to all processes for which the calling process has permision. 
+
+			2. Signal numbers: signal parameter can take any signal int defined by signals.h header.
+			3. Signal handling: Signal process is customizable.
+			4. Error handling: kill() function returns -1 when an error has occurred. 
+
 	- getpid()
+		- Function that returns the PId of the current process
+
 	- pause()
 	- sleep()
+		Adds a delay between actions, in this case to wait for signals to arrive. 
 	- usleep()
 	- exit()
+
+
+
+	PROCESSES vs THREADS
