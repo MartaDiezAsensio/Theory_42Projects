@@ -94,12 +94,3 @@ Password Policy
 		4. Password History
 		5. Account Lockout
 		6. Password Strength Assestment
-
-
-Sudo
-
-SSH 
-
-UFW
-
-Cron
