@@ -30,4 +30,11 @@ is to understand the nature of stack.
 
 - Linked List Implementation
 	To implement a stack using a linked list, we have to consider the type of linked list we would use and which end of the list
-	we would want to insert to. 
+	we would want to insert to.
+
+	The simplest linked list there is is a sngly list. If this linked list was implemented with just a poiner to the first node,
+	insertion would be O(1) at front of the list, O(n) at back of list. Removal will have the same time complexity.
+
+	If we were to insert always at front of list, then the most recently added item would be at the from os the list. Thus,
+	removal must occur from the from as we always remove the most recently added item.
+
